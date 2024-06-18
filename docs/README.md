@@ -142,3 +142,7 @@
 ## 七、视频演示
 [点击观看视频演示](assets/智慧养老系统介绍.mp4)
 
+<video controls>
+  <source src="assets/智慧养老系统介绍.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
