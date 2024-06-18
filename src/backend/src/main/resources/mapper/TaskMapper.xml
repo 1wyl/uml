@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.backend.task.TaskMapper">
+
+    <!-- 定义结果映射 -->
+    <resultMap id="taskResultMap" type="com.example.backend.task.Task">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="uid" property="uid" />
+        <result column="completed" property="completed" />
+    </resultMap>
+
+    <!-- 根据用户ID查询任务 -->
+    <select id="findByUserId" resultMap="taskResultMap">
+        SELECT * FROM tasks WHERE uid = #{userId}
+    </select>
+
+    <!-- 插入新任务 -->
+    <insert id="insertTask">
+        INSERT INTO tasks (name, uid, ddl,completed)
+        VALUES (#{name}, #{uid}, #{ddl}, #{completed})
+    </insert>
+
+    <!-- 查找任务 -->
+    <select id="findTaskById" resultType="com.example.backend.task.Task">
+        SELECT id, name, uid, ddl, completed
+        FROM tasks
+        WHERE id = #{taskId}
+    </select>
+
+    <update id="updateTask">
+        UPDATE tasks
+        SET name = #{name}, completed = #{completed}, ddl = #{ddl}
+        WHERE id = #{id} and uid = #{uid}
+    </update>
+
+    <!-- 删除任务 -->
+    <delete id="deleteTask" parameterType="com.example.backend.task.Task">
+        DELETE FROM tasks WHERE id = #{id} and  uid = #{uid}
+    </delete>
+
+</mapper>

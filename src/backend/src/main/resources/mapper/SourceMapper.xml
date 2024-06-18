@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.backend.source.SourceMapper">
+
+    <insert id="addPicture" parameterType="com.example.backend.source.Picture">
+        INSERT INTO picture (description, date, url)
+        VALUES ( #{description}, #{date}, #{url})
+    </insert>
+
+    <insert id="addMedicine" parameterType="com.example.backend.source.Medicine">
+        INSERT INTO medicine (description, date, url)
+        VALUES (#{description}, #{date}, #{url})
+    </insert>
+    <insert id="addFood" parameterType="com.example.backend.source.Food">
+        INSERT INTO food (description, date, url)
+        VALUES (#{description}, #{date}, #{url})
+    </insert>
+    <insert id="addVideo" parameterType="com.example.backend.source.Video">
+        INSERT INTO video (uid, description, date, url)
+        VALUES (#{uid}, #{description}, #{date}, #{url})
+    </insert>
+
+    <select id="getAllPictureUrls" resultType="String">
+        SELECT url
+        FROM food
+    </select>
+
+    <select id="getAllVideoUrls" resultType="String">
+        SELECT url
+        FROM medicine
+    </select>
+<!--    &lt;!&ndash; 查找任务 &ndash;&gt;-->
+<!--    <select id="findTaskById" resultType="com.example.backend.task.Task">-->
+<!--        SELECT id, name, uid, ddl, completed-->
+<!--        FROM tasks-->
+<!--        WHERE id = #{taskId}-->
+<!--    </select>-->
+
+<!--    <update id="updateTask">-->
+<!--        UPDATE tasks-->
+<!--        SET name = #{name}, completed = #{completed}, ddl = #{ddl}-->
+<!--        WHERE id = #{id} and uid = #{uid}-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; 删除任务 &ndash;&gt;-->
+<!--    <delete id="deleteTask" parameterType="com.example.backend.task.Task">-->
+<!--        DELETE FROM tasks WHERE id = #{id} and  uid = #{uid}-->
+<!--    </delete>-->
+
+</mapper>
