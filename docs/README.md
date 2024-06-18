@@ -140,11 +140,7 @@
 通过全面的功能设计，智慧养老系统不仅满足了老人用户和工作人员用户的需求，提高了养老服务的效率和管理水平，同时使老年人能够享受到更便捷、更全面的养老服务，使晚年生活更加安心、舒适和有保障。未来，系统可以进一步优化和扩展功能，以适应不断变化的需求，提供更加优质的养老服务。
 
 ## 七、视频演示
-[点击观看视频演示](assets/智慧养老系统介绍.mp4)
-
-## 八、视频演示
-
-<video controls>
+<video controls width="640" height="360">
   <source src="assets/智慧养老系统介绍.mp4?version=1.0" type="video/mp4">
   Your browser does not support the video tag.
 </video>
